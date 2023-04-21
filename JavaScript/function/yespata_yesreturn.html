@@ -1,0 +1,63 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        // function info(name,city){
+            
+        //     if ((typeof(name) === "number")){
+        //         return "문자를 입력하세요 <br />"
+        //     }
+
+        //     else{
+        //         information = name + "의 고향은 " + city + "입니다 <br />."
+                
+        //     }
+            
+        //     return information
+        // }
+
+        // val_1 = info(10,10)
+        // val_2 = info("박유진","부산")
+
+        // document.write(val_1)
+        // document.write(val_2)
+
+
+        // a = "유진이"
+        // b = "정상이"
+
+        // document.write((typeof(a)&&typeof(b)==="string"))
+
+        let names = ["김은지","박유진","최정상"]
+        let cities = ["부산","서울","대전"]
+
+        function showme(name, city){
+            infors = name + "의 고향은 " + city + "입니다 <br />"
+
+            return infors
+        }
+
+        // val_1 = showme("최정상","남해")
+        // document.write(val_1)
+
+        for (i=0;i<names.length;i++){
+            vals = showme(names[i],cities[i])
+            document.write(vals)
+        }
+
+        
+
+        
+
+    </script>
+
+    
+</body>
+</html>
