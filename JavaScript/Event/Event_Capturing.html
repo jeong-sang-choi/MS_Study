@@ -1,0 +1,60 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+            #grand{
+            width:360px;
+            height:160px;
+            margin:5px;
+            padding:5px;
+            background-color: blue;
+            color:white
+        }
+
+        #parent{
+            width:250px;
+            margin:10px;
+            padding:5px;
+            background-color: white;
+            color:black;
+        }
+
+        #child {
+            width:200px;
+            height:40px;
+            margin:5px;
+            padding:5px;
+            background-color: teal;
+            color:white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id = "grand">
+        grandparent
+        <div id = "parent">
+            parent
+            <button id = "button">child</button></div>
+        </div>
+
+    <script>
+        for (let elem of document.querySelectorAll("div")){
+            // document.write(elem.innerHTML)
+            elem.addEventListener("click",handle_event, true);
+            
+        }
+
+        let btnelem = document.querySelector("button");
+        btnelem.addEventListener("click",handle_event,true);
+        function handle_event(event){console.log(`handle_event : ${event.target.id} + current_event : ${event.currentTarget.id}`)}
+        
+    </script>
+    
+</body>
+</html>

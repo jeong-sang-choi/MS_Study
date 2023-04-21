@@ -1,0 +1,42 @@
+
+
+ 자바스크랩트의 이벤트 시스템의 핵심
+    HTML_element.addEventlistener(eventType,handler,capture) -->
+    <!-- eventType - click, dblclick, submit 과 같은 이벤트 이름
+    handler - 이벤트가 발생했을때 처리해줄 함수, 즉 이벤트 리스너 혹은 이벤트 핸들러
+    capture - ture 혹은 false 중 하나의 값을 가지게 되는데 일반적으로 대부분의 경우 false 를 사용
+    이 옵션은 이벤트 캡쳐(event capturing), 이벤트 버블링(event bubbling과 관련됨 ) -->
+        <!-- <!-- 자기자신 실행시키고 부모로 전달하고 그다음 부모한테 전달하고 할아버지 전달하는거 - 이벤트 버블링 -->
+        <!-- 이벤트 캡쳐링은 여기서 실행됬는데 멀리 할아버지부터 시행되는거 -->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<body>
+    
+    <p id = "greetings">안녕하세요</p>
+    <input id = "message" type = "button" value = "확인">
+
+    <script>
+        //https://developer-talk.tistory.com/821 
+        // 자바스크립트 function 생략가능
+        //https://lucidmaj7.tistory.com/138
+
+        let pElem = document.getElementById("greetings"); //연결할 대상선택
+        let inputElem = document.getElementById("message");
+
+        pElem.addEventListener("dblclick",()=> {console.log("네 만나서 반갑습니다.")}, false)
+        inputElem.addEventListener("click",() => {console.log("그 동안 잘지내셨죠 ? ㅎㅎ")},false)
+    </script>
+    
+</body>
+
+</html>
+
+

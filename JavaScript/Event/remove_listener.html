@@ -1,0 +1,41 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- 자바 동기 비동기 -->
+<!-- https://gobae.tistory.com/100 -->
+<!-- https://velog.io/@lsj8367/Javascript-%EB%8F%99%EA%B8%B0%EC%99%80-%EB%B9%84%EB%8F%99%EA%B8%B0%EB%B0%A9%EC%8B%9D%EC%9D%98-%EC%B0%A8%EC%9D%B4%EC%A0%90 -->
+<body>
+    <!-- 1단계 -->
+    <p id = "greetings">안녕하세요</p>
+    <input id = "message" type = "button" value = "확인">
+    <input id = "removeListener" type = "button" value = "이벤트 리스너 연결해제">
+
+    <script>
+        //3단계
+        function greetings(){console.log("네 만나서 반갑습니다 ㅎㅎ")}
+        function message(){console.log("그동안 잘지내셨죠? ㅎㅎ")}
+        function releaseListener(){
+            pElem.removeEventListener("dblclick",greetings, false)
+            inputElem.removeEventListener("click",message,false)
+            console.log("이벤트리스너 연결 해제됨")
+        }
+
+    // 2단계
+    let pElem = document.getElementById("greetings")
+    let inputElem = document.getElementById("message")
+    let removeListener = document.getElementById("removeListener")
+
+    //이벤트 리스너 연결 4단계
+    pElem.addEventListener("dblclick",greetings,false)
+    inputElem.addEventListener("click",message,false)
+    removeListener.addEventListener("click",releaseListener,false)
+
+
+    </script>
+    
+</body>
+</html>
