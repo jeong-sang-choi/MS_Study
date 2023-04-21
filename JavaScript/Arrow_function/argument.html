@@ -1,0 +1,41 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>argument</title>
+</head>
+<body>
+
+    <script>
+
+        // function long_name(){
+        //     name = ""
+
+        //     for (i=0; arguments.length > i;i++){
+        //         document.write(arguments[i],"<br />")
+        //         if (name.length < arguments[i].length){
+        //             name = arguments[i]
+        //         }
+        //     }
+
+        //     return name
+        // }
+
+        // document.write("긴 이름은 : " + long_name("부산광역시","헝가리입니다","이게제일길걸요?"))
+
+        function name_found(){
+            for (i=0;arguments.length>i;i++){
+                if (arguments[i].startsWith("박")||arguments[i].startsWith("최")){
+                    document.write(arguments[i] + " ")
+                }
+            }
+        }
+
+        name_found("박유진","최정상","김은지")
+
+
+    </script>
+    
+</body>
+</html>

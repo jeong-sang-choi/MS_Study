@@ -1,0 +1,56 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        let inforamtion = (name,age) => {
+
+            info = "당신의 이름은 " + name + "이고 나이는 " + age + "입니다"
+
+            if (typeof(age) === "number"){
+                document.write("문자로 입력하세요/ <br />")
+                document.write(typeof(info),"<br />")
+
+                return info
+            } 
+
+            
+            else{
+                return info
+            }
+
+            
+        }
+
+        document.write(inforamtion("최정상", 10))
+
+        const Current_date = (inyourname) => {
+            current_date = new Date().toISOString().slice(0,10)
+            info = inyourname + "님 오늘날짜는 " + current_date+ " 입니다. "
+
+            return info
+        }
+
+        document.write(Current_date("박유진"))
+
+
+        let total_information = (name,age) => {
+
+            info = Current_date(name) + "나이는 " + age + "인가요?"
+
+            return info
+
+        }
+
+        document.write(total_information("박유진",20))
+
+    </script>
+    
+</body>
+</html>

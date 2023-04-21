@@ -1,0 +1,55 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // const message = () => {
+        //     alert("만나서 반갑습니다.")
+        // }
+
+        // message()
+
+
+        let showme = () => {
+            let name = prompt("이름을 입력하세요.","")
+            let age = Number(prompt("숫자를 입력하세요",""))
+            let information = ""
+
+
+            if (typeof(age) !== "number"){
+                information = "숫자로 입력하세요"
+                document.write(typeof(name), "<br />")
+                document.write(typeof(age))
+              
+
+                return information
+            }
+
+            else{
+                information = name + "의 나이는" + age + "입니다."
+                document.write(typeof(name), "<br />")
+                document.write(typeof(age))
+                
+                return information
+            
+            
+            }
+
+
+        }
+        ans = showme()
+        document.write(ans)
+        document.write(name)
+        document.write(age)
+    </script>
+    
+</body>
+
+</html>
+

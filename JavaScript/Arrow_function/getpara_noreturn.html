@@ -1,0 +1,36 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        let current_date = new Date()
+        const message = (inyourname) => {
+            
+
+            if (inyourname === "최정상") {
+                information = "멋진 사람이군요 ! <br />"
+            }
+
+            else {
+                information = "당신의 이름은 " + inyourname + "입니다.<br />"
+            }
+
+            return information
+        }
+
+        document.write(message("박유진"))
+        document.write(message("최정상"))
+        document.write(message("김은지"))
+        document.write(current_date.getDate())
+
+        </script>
+
+    
+</body>
+</html>
