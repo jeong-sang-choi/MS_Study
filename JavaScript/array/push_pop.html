@@ -1,0 +1,43 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- push -> 배열에 아이템을 추가할때
+    pop -> 배열에 저장되어 있는 아이템을 제거할때 -->
+</head>
+
+<body>
+
+    <script>
+
+        let cities = ["서울","부산","대전"]
+        let extra_cities = ["광주","인천"]
+
+        show_item(cities);
+
+        cities.push("전주","춘천")
+        show_item(cities);
+
+        let returnValue = cities.pop();
+        document.write(`pop 된 값은 ${returnValue} 입니다 ^^ <br />`)
+
+        show_item(cities)
+
+        function show_item(in_array){
+            if(Array.isArray(in_array)){
+                for (var idx =0;idx<in_array.length;idx++){
+                    document.write(`index 는 ${idx} + value : ${in_array[idx]} <br />`)   
+                }
+                document.write(`아이템 수는 ${in_array.length} 입니다.<br />`)
+                document.write("--------- <br />")     
+            }
+        }
+        
+
+    </script>
+    
+</body>
+
+</html>

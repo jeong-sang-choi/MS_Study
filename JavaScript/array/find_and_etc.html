@@ -1,0 +1,47 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- find() -> 검색에 맞는 아이템을 리턴 아이템이 없다면 undefined 를 반환
+    findindex() -> 검색에 맞는 인덱스 반환 검색이 안될시 -1을 반환
+    findLast() -> 맨 마지막 부터 검색을 시작하여 첫번째로 검색되는 아이템을 리턴 값이 없을시 undefined 반환
+    findLastIndex() ->맨 마지막 부터 검색을 시작하여 첫번째로 검색되는 아이템의 인덱스를 반환 검색 안될시 -1 반환 -->
+
+    <!-- array.find(function(){}...)
+    array.findIndex(function(){}...)
+    array.findLast(function(){}...)
+    array.findLastIndex(function(){}...) -->
+</head>
+
+<body>
+    <script>
+
+let items = [
+        {name:"삼성_1",price:10000},
+        {name:"삼성_2",price:20000},
+        {name:"삼성_3",price:30000},
+        {name:"삼성_4",price:40000},
+        {name:"삼성_5",price:50000},
+        {name:"삼성_6",price:60000},
+    ];
+
+    let FoundItem = items.find((item) => {return item.name === "삼성_3"})
+    let notFoundItem = items.find((item) => {return item.name === "삼성_7"})
+    let FoundItem_index = items.findIndex((item)=>{return item.name === "삼성_4"})
+
+    let FoundLast = items.findLast((item)=>{return item.name === "삼성_5"})
+    let FoundLast_index = items.findLastIndex((item)=>{return item.name === "삼성_3"})
+
+    document.write(FoundItem["name"] + "<br />")
+    document.write(notFoundItem + "<br />")
+    document.write(FoundLast["name"] + "<br />")
+    document.write(FoundItem_index + "<br />")
+    document.write(notFoundItem+ "<br />")
+    document.write(FoundLast_index)
+    </script>
+
+</body>
+
+</html>

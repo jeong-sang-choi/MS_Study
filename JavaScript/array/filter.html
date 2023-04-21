@@ -1,0 +1,63 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filtered</title>
+</head>
+
+<body>
+
+    <script>
+            let items = [
+        {name:"삼성_1",price:10000},
+        {name:"삼성_2",price:20000},
+        {name:"삼성_3",price:30000},
+        {name:"삼성_4",price:40000},
+        {name:"삼성_5",price:50000},
+        {name:"삼성_6",price:60000},
+    ];
+
+    // 여기서 filter 해서 foreach 의 filteredItems 에 넘겨줌 그다음 filteredItem for 문으로 돌림 
+    let filteredItems = items.filter(function (item){
+        return item.price <= 40000
+    })
+
+    filteredItems.forEach(filteredItem => {
+        for (let key in filteredItem){
+            document.write(`${key} : ${filteredItem[key]} <br />`)
+            // document.write(filteredItem.values())
+        }
+    })
+
+    </script>
+
+
+
+
+
+    
+</body>
+
+</html>
+
+<!-- <script>
+    let items = [
+        {name:"삼성_1",price:10000},
+        {name:"삼성_2",price:20000},
+        {name:"삼성_3",price:30000},
+        {name:"삼성_4",price:40000},
+        {name:"삼성_5",price:50000},
+        {name:"삼성_6",price:60000},
+    ]
+
+    //가격이 40000 원 보다 더 작은 아이템만 저장
+    get_price(items)
+
+    function get_price(item){
+        for (idx=0;item.length>idx;idx++){
+            if (item[idx]["price"]< 40000){
+                document.write(item[idx]["name"],"<br />")
+            }
+        }
+    } -->

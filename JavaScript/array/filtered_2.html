@@ -1,0 +1,43 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+let items = [
+        {name:"삼성_1",price:10000},
+        {name:"삼성_2",price:20000},
+        {name:"삼성_3",price:30000},
+        {name:"삼성_4",price:40000},
+        {name:"삼성_5",price:50000},
+        {name:"삼성_6",price:60000},
+    ];
+
+    function filterditems_by_price(in_items, in_price){
+        let filtereditems = in_items.filter(function (item){
+            return item.price <= in_items.price
+        })
+
+        return filtereditems;
+    }
+
+
+    let filtereditems = filterditems_by_price(items,40000)
+    document.write(filtereditems)
+
+
+
+    
+
+        
+    </script>
+    
+</body>
+
+</html>

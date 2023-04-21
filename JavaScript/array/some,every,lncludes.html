@@ -1,0 +1,35 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- some() 메서드는 배열안의 아이템중 하나라도 조건에 맞으면 true, 하나도 안맞으면  false 반환
+    every() 메서드는 배열안의 모든 아이템의 조건이 맞으면 true 아니면 false
+    includes() 메서드는 특정 아이템이 배열안에 있는지 확인하여 있으면 true 없으면 false 반환
+
+    array.some(function(){...})
+    array.every(function(){...})
+    array.includes(searchitem,start);
+</head> -->
+
+<body>
+
+    <script>
+
+        const ages = [29,56,16,41,65]
+
+        function checkAge(age){
+            return age > 20
+        }
+
+        document.write(ages.some(checkAge)+"<br />")
+        document.write(ages.every(checkAge)+"<br />")
+        document.write(ages.includes(29)+"<br/>")
+        document.write(ages.includes(29,1)+"<br/>")
+
+    </script>
+    
+</body>
+
+</html>
