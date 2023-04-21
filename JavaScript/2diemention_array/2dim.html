@@ -1,0 +1,41 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- var two_dim_array = [
+    [item1,item2],
+    [item3,item4]
+    ] -->
+
+</head>
+
+<body>
+
+    <script>
+
+        const populations_cities = [
+            ["서울시",10000],
+            ["부산시",20000],
+            ["남해군",30000],
+            ["대전시",40000]
+        ]
+
+        function displayItems(inArray){
+            for (var rdx=0;rdx < inArray.length;rdx++){
+                for (var cdx = 0;cdx <inArray[0].length;cdx++){
+                    document.write(inArray[rdx][cdx],"\t") //inArray[0] 는 열개수
+                }
+                document.write("<br />")
+            }
+        }
+
+        displayItems(populations_cities)
+
+    </script>
+    
+</body>
+
+</html>

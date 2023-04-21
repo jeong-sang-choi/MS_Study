@@ -1,0 +1,60 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2Dim_Practice</title>
+    
+
+    <style>
+        /* https://lcw126.tistory.com/139 */
+        /* https://velog.io/@juunghunz/CSS-Selector */
+        table {
+            border-collapse: collapse;
+            margin:25px 0;
+            min-width:200px;
+            box-shadow: 0 0 20px rgba (0,0,0,15);
+        }
+
+        table th {padding:5px 0; background-color: teal; color:#ffffff}
+        table tr td:last-child {color:blueviolet;text-align: right;}
+    </style>
+</head>
+
+<body>
+
+    <script>
+
+        const populations_cities = [
+            ["서울시",10000],
+            ["부산시",20000],
+            ["남해군",30000],
+            ["대전시",40000]
+        ]
+
+        const displayItems = (inArray) => {
+            document.write("<table border>");
+            document.write("<tr>")
+            document.write("<th>도시</th>")
+            document.write("<th>인구</th>")
+            document.write("</tr>")
+
+
+            for (var ridx = 0;ridx < inArray.length;ridx++){
+                document.write("<tr>")
+            
+                for (var cidx = 0;cidx < inArray[0].length;cidx++)
+                    document.write("<td>"+inArray[ridx][cidx].toLocaleString("ko-KR") + "</td>")
+                document.write("</tr>")
+            }
+                
+            document.write("</table>")
+        }
+                
+        
+        displayItems(populations_cities)
+    </script>
+    
+</body>
+
+</html>
