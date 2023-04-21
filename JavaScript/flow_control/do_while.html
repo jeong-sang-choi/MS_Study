@@ -1,0 +1,33 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        let yourdate = new Date()
+        let day = yourdate.getDay()
+        let month = yourdate.getMonth()
+        month++ //내부적으로 1월이 0이라서 +1 해줌
+        let year = yourdate.getFullYear()
+
+        count = 0
+        do {
+            document.write(year + "/"+month+"/"+day+"<br />")
+            count++
+        }
+
+        while(count < 2)
+        document.write("나는 while문 밖에있어.")
+
+    </script>
+
+
+                                                                      
+</body>
+</html>
