@@ -83,3 +83,16 @@ curl -X GET http://localhost:5000/v2/_catalog 푸쉬 잘됬는지 확인
 curl -X GET http://localhost:5000/v2/my-image/tags/list
 
 도커 이미지 땡겨올때는 pull
+
+도커 허브 사용
+
+먼저 로그인
+docker login
+
+도커허브 아이디 비번 입력
+
+도커허브 연결
+
+docker tag my-image:v1.0.0 jeongsang/my-image:v1.0.0 
+
+docker push my-image:v1.0.0 jeongsang/my-image:v1.0.0 도커허브쪽에 푸쉬
