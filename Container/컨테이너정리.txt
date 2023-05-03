@@ -23,3 +23,63 @@ docker ps -a
 
 docker rm awesome_colden 이미지를 지우기 위해 컨테이너를 먼저 지워야함
 docker rmi hello-world
+
+docker rm awesome_colden 이미지를 지우기 위해 컨테이너를 먼저 지워야함
+docker rmi hello-world
+
+도커 이미지 : 요리레시피
+도커 컨테이너 : 레시피로 만든 요리 (도커 이미지로 실행시킨 인스턴스 = 동적상태의 이미지)
+
+전에 이미지랑 콘테이너 헷갈려서 알아보다 좋은 설명들어서 공유해욥! 
+-----------------------
+버전이 다를떄
+
+22.04 버전위에 다른 버전의 도커를 올림
+
+----------
+도커를 만드는 작업
+
+pwd
+
+cd $HOME
+
+mkdir docker-practicecd
+
+ls -l 숨긴파일뺴고 개수출력
+
+touch Docker-file(Dockerfile)
+
+도커를 만들떄 이미지가 들어가고 그 위에 컨테이너를 쌓아올림
+
+vi Dockerfile
+
+FROM ubuntu:18.04
+RUN apt-get update
+CMD ["echo","Hello Microsoft AI 2"]
+
+ESE 누르고 :wq
+
+docker build -t my-image:v1.0.0 . 도커 이미지를 빌드(생성)하는 과정
+
+docker run --name demo1 my-image:v1.0.0 컨데이너 생성
+
+docker run -d -p 5000:5000 --name registry(컨테이너이름) registry(도커 컨테이너 이미지)
+
+공유하면서 쓰고싶으면 회사에 서버를 만듬 이 서버는 로컬레지스티 역할을함애
+
+이말은 생성된 서버에 이미지를 업로드
+
+두번째는 클라우드를 이용 특히 도커 이미지를 도커허브라는 사이트 사용
+
+3번쨰는 클라우드 이용인데 애저를 이용
+
+저장하는 저장공간 레퍼지토리, 저장하는 시스템의 이름 레지스토리
+
+내가 원하는 이미지 찾는법 docker images | grep my-image
+
+docker tag my-image:v1.0.0 localhost:5000/my-image:v1.0.0 이후 docker push localhost:5000/my-image:v1.0.0 도커 이미지 넣는법 근데 이런식으로 사용 잘안함
+
+curl -X GET http://localhost:5000/v2/_catalog 푸쉬 잘됬는지 확인
+curl -X GET http://localhost:5000/v2/my-image/tags/list
+
+도커 이미지 땡겨올때는 pull
