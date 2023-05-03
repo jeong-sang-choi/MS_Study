@@ -1,0 +1,78 @@
+쿠버네티스 실습
+
+
+curl -LO https://storage.googleapis.com/minikube/releases/v1.22.0/minikube-linux-amd64
+sudo install minikube-linux-amd64 usr/local/bin/minikube
+
+설치 잘되었는지 확인 minikube version
+
+curl -LO https://dl.k8s.io/release/v1.22.1/bin/linux/amd64/kubectl 관리하고 돌리기 위해서 kubectl 설치
+
+sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+
+
+minikube start --driver=docker
+
+minikube status
+
+
+kubectl get pod # 지금은 실행중인게 없다고 뜨는데
+
+kubectl get pod -n kube-system 시스템에 사용하고있는 파드들 확인가능
+
+minikube delete 미니쿠베 삭제 설치되어 있는거를 다날리는게 아니라 메모리만 날리는거임 minikube start --driver=docker 실행하면 다시 실행됨
+
+
+YAML 실습
+
+-데이터 직렬화에 쓰이는 포멧중 하나
+
+데이터 직렬화란? 서비스간에 Data 를 전송할때 쓰이는 포맷으로 변환하는 작업
+
+ex) 쿠버네티스 마스터에게 요청을 보낼때 사용
+
+다른 직렬화 포맷 XML, JSON
+
+vi pod.yaml 시행후 파일생성
+
+kubectl apply -f pod.yaml
+
+kubectl get pod
+
+kubectl get pod -A 시스템 확인하는 명령어
+
+kubectl get pod 이미지이름
+
+kubectl get pod -w 좀 더 자세하게 설명
+kubectl get pod -o wide
+
+kubectl logs counter
+
+pod 자체에 접속 kubectl exec -it counter /bin/bash
+
+pod 삭제 kubectl delete pod 포드이름
+             kubectl delete -f pod.yaml
+
+Deployment : Pod 와 Replicaset에 대한 관리를 제공하는 단위
+쉽게 생각하면 Pod 를 감싼 단위라고 생각
+
+
+스케일을 올리고 싶을때
+
+kubectl scale deployment/nginx-deployment(yaml 파일에서 지정한이름) --replicas=20
+
+kubectl get deployment
+
+kubectl get pod
+
+kubectl scale deployment/nginx-deployment(yaml 파일에서 지정한이름) --replicas=5 으로 설정하고 kubectl get pod 하면 terminating (파드가 줄어드는것을 볼수있음)
+
+
+kubectl delete pod 특정파드 이름하면 다른애가 생성되어서 채워넣음
+
+kubectl delete deployment(yaml 파일에서 지정한이름)  deployment 삭제됨
+
+kubectl get pod 해서 확인하면 모두 삭제된거 확인가능
+
+------------
+service는 쿠버네티스에 배포한 애플리케이션(Pod)을 외부에서 접근하기 쉽게 추상화한 리소스입니다.
