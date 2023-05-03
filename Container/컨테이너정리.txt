@@ -1,0 +1,25 @@
+이후 도커를 런해서 Web 01 이런식으로 이름 붙여서 사용
+
+데이터베이스는  db01 이런식으로 이름 붙여서 사용
+
+도커 컨테이너가 많아져서 쿠버네티스 등장
+
+docker logs demo1
+
+docker run name demo3 -d busybox sh -c "while true;do $(echo date);sleep 1;done"
+
+docker logs demo3
+docker logs demo3 -f 계속 track 하기 위해 이 명령어 사용
+
+ctrl + c 하면 break 하는거
+
+
+docker stop demo3 지워진게 아니라 정지상태임
+docker stop demo2
+
+docker rm demo1 을 해야 삭제됨
+
+docker ps -a
+
+docker rm awesome_colden 이미지를 지우기 위해 컨테이너를 먼저 지워야함
+docker rmi hello-world
